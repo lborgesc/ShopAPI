@@ -1,0 +1,41 @@
+POST http://localhost:3000/user HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@doe.com",
+  "password": "123456"
+}
+###
+PUT http://localhost:3000/user/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "John Doe 2",
+  "email": "john@doe.com",
+  "password": "123456"
+}
+###
+GET http://localhost:3000/user HTTP/1.1
+###
+
+POST http://localhost:3000/item HTTP/1.1
+Content-Type: application/json
+
+{
+  "product": "PlayStation 5 Slim Edição Digital",
+  "price": 3.499,
+  "reviews": 4.8
+}
+###
+PUT http://localhost:3000/item/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "product": "PlayStation 5 Slim Edição Digital",
+  "price": 4.000,
+  "reviews": 4.8
+}
+
+###
+GET http://localhost:3000/item HTTP/1.1
