@@ -26,6 +26,17 @@ async function main() {
       price REAL NOT NULL UNIQUE,
       reviews REAL NOT NULL
     ) STRICT;
+
+    CREATE TABLE carts(
+    id_cart INTEGER PRIMARY KEY,
+    id_produto INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    total_amount REAL NOT NULL,
+    status TEXT NOT NULL,
+    FOREIGN KEY (id_produto) REFERENCES produtos(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+    ) STRICT;
   `);
 
   const app = express();
