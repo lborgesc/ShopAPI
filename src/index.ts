@@ -29,13 +29,18 @@ async function main() {
 
     CREATE TABLE carts(
     id_cart INTEGER PRIMARY KEY,
-    id_produto INTEGER NOT NULL,
-    user_id INTEGER NOT NULL,
-    quantity INTEGER NOT NULL,
+    id_user INTEGER NOT NULL,
     total_amount REAL NOT NULL,
     status TEXT NOT NULL,
-    FOREIGN KEY (id_produto) REFERENCES itens(id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (id_user) REFERENCES users(id)
+    ) STRICT;
+
+     CREATE TABLE carts_item(
+    id_cart INTEGER NOT NULL,
+    id_item INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    FOREIGN KEY (id_cart) REFERENCES carts(id_cart),
+    FOREIGN KEY (id_item) REFERENCES itens(id)
     ) STRICT;
   `);
 
