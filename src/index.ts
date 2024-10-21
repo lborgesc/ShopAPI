@@ -3,6 +3,7 @@ import http from 'http';
 import express from 'express';
 import user from './controllers/user.ts';
 import item from './controllers/item.ts';
+import cart from './controllers/cart.ts';
 import { DatabaseSync } from 'node:sqlite';
 import onError from './middlewares/on-error.ts';
 import { UserService } from './services/user.ts';
@@ -53,7 +54,7 @@ async function main() {
   app.use(onError);
   app.use('/user', user);
   app.use('/item', item);
-
+  app.use('/cart', cart);
   server.listen(3000);
 }
 
