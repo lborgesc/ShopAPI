@@ -34,7 +34,7 @@ async function main() {
     quantity INTEGER NOT NULL,
     total_amount REAL NOT NULL,
     status TEXT NOT NULL,
-    FOREIGN KEY (id_produto) REFERENCES produtos(id),
+    FOREIGN KEY (id_produto) REFERENCES itens(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
     ) STRICT;
   `);
